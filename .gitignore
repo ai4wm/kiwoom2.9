@@ -1,0 +1,71 @@
+# Visual Studio 빌드 결과
+Debug/
+Release/
+x64/
+x86/
+[Dd]ebug*/
+[Rr]elease*/
+
+# Visual Studio 임시 파일들
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+*.tmp
+*.log
+*.ilk
+*.obj
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp_proj
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# IntelliSense 데이터베이스
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.VC.opendb
+
+# Visual Studio 캐시 파일
+ipch/
+*.suo
+*.ncb
+*.aps
+*.user
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# 임시 파일들
+*.tmp
+*.temp
+*~
+
+# OS 생성 파일들
+Thumbs.db
+.DS_Store
+
+# IDE 설정 파일들
+.vs/
+.vscode/
+.idea/
+
+# Claude 설정 파일들
+.claude/
