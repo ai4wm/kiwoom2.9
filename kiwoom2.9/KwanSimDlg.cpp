@@ -1,15 +1,15 @@
 //******************************************************************/
 //******************************************************************/
-//! All Rights Reserved. Copyright(c)   2014 (ÁÖ)ÇÑ±¹¼Ò¸®¸¶Ä¡        /
+//! All Rights Reserved. Copyright(c)   2014 (ï¿½ï¿½)ï¿½Ñ±ï¿½ï¿½Ò¸ï¿½ï¿½ï¿½Ä¡        /
 //******************************************************************/
 //! File Name     : KwanSimDlg.cpp
-//! Function      : º¹¼öÁ¾¸ñ ´ÙÀÌ¾ó·Î±×
-//! System Name   : Å°¿ò ¿ÀÇÂAPI Å×½ºÆ®
+//! Function      : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½Î±ï¿½
+//! System Name   : Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½API ï¿½×½ï¿½Æ®
 //! Create        : , 2014/06/02
 //! Update        : 
 //! Comment       : 
 //******************************************************************/
-// KwanSimDlg.cpp : ±¸Çö ÆÄÀÏ
+// KwanSimDlg.cpp : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //
 
 #include "stdafx.h"
@@ -21,32 +21,32 @@
 #define new DEBUG_NEW
 #endif
 
-const CString m_strRealSet = "ÁÖ½Ä½Ã¼¼;ÁÖ½ÄÃ¼°á";
+const CString m_strRealSet = "ï¿½Ö½Ä½Ã¼ï¿½;ï¿½Ö½ï¿½Ã¼ï¿½ï¿½";
 
-// {Á¶È¸ Å°,		¸®¾ó Å°,	Çà, ¿­, Å¸ÀÔ,			»ö º¯°æ, Á¤·Ä, ¾Õ ¹®ÀÚ, µÞ ¹®ÀÚ}
+// {ï¿½ï¿½È¸ Å°,		ï¿½ï¿½ï¿½ï¿½ Å°,	ï¿½ï¿½, ï¿½ï¿½, Å¸ï¿½ï¿½,			ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½}
 const stGRID lstOPTKWFID[] = 
 {
-	{_T("Á¾¸ñÄÚµå"),		_T("-1"),	-1,	0,	DT_NONE,		FALSE,	DT_LEFT,	_T(""),	_T("")}, 
-	{_T("Á¾¸ñ¸í"),		_T("-1"),	-1,	1,	DT_NONE,		FALSE,	DT_LEFT,	_T(""),	_T("")}, 
-	{_T("ÇöÀç°¡"),		_T("10"),	-1,	2,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("")}, 
-	{_T("ÀüÀÏ´ëºñ±âÈ£"),	_T("25"),	-1,	3,	DT_SIGN,		TRUE,	DT_CENTER,	_T(""),	_T("")}, 
-	{_T("ÀüÀÏ´ëºñ"),		_T("11"),	-1,	4,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("")}, 
-	{_T("µî¶ôÀ²"),		_T("12"),	-1,	5,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("%")}, 
-	{_T("°Å·¡·®"),		_T("13"),	-1,	6,	DT_ZERO_NUMBER,	FALSE,	DT_RIGHT,	_T(""),	_T("")}, 
-	{_T("ÀüÀÏ°Å·¡·®´ëºñ"),	_T("30"),	-1,	7,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("%")}, 
+	{_T("ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½"),		_T("-1"),	-1,	0,	DT_NONE,		FALSE,	DT_LEFT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½ï¿½ï¿½"),		_T("-1"),	-1,	1,	DT_NONE,		FALSE,	DT_LEFT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½ç°¡"),		_T("10"),	-1,	2,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½È£"),	_T("25"),	-1,	3,	DT_SIGN,		TRUE,	DT_CENTER,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½Ï´ï¿½ï¿½"),		_T("11"),	-1,	4,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½ï¿½ï¿½"),		_T("12"),	-1,	5,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("%")}, 
+	{_T("ï¿½Å·ï¿½ï¿½ï¿½"),		_T("13"),	-1,	6,	DT_ZERO_NUMBER,	FALSE,	DT_RIGHT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½Ï°Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"),	_T("30"),	-1,	7,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("%")}, 
 };
 
-// ½Ç½Ã°£ ÁÖ¹®Ã¼°á(ÇöÀç°¡ Ç¥½Ã¿ë)
+// ï¿½Ç½Ã°ï¿½ ï¿½Ö¹ï¿½Ã¼ï¿½ï¿½(ï¿½ï¿½ï¿½ç°¡ Ç¥ï¿½Ã¿ï¿½)
 const stGRID lstOPTKWFID_B[] = 
 {
-	{_T("Á¾¸ñÄÚµå"),		_T("-1"),	-1,	0,	DT_NONE,		FALSE,	DT_LEFT,	_T(""),	_T("")}, 
-	{_T("Á¾¸ñ¸í"),		_T("-1"),	-1,	1,	DT_NONE,		FALSE,	DT_LEFT,	_T(""),	_T("")}, 
-	{_T("ÇöÀç°¡"),		_T("10"),	-1,	2,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("")}, 
-	{_T("ÀüÀÏ´ëºñ±âÈ£"),	_T("25"),	-1,	3,	DT_SIGN,		TRUE,	DT_CENTER,	_T(""),	_T("")}, 
-	{_T("ÀüÀÏ´ëºñ"),		_T("11"),	-1,	4,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("")}, 
-	{_T("µî¶ôÀ²"),		_T("12"),	-1,	5,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("%")}, 
-	{_T("°Å·¡·®"),		_T("13"),	-1,	6,	DT_ZERO_NUMBER,	FALSE,	DT_RIGHT,	_T(""),	_T("")}, 
-	{_T("ÀüÀÏ°Å·¡·®´ëºñ"),	_T("30"),	-1,	7,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("%")}, 
+	{_T("ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½"),		_T("-1"),	-1,	0,	DT_NONE,		FALSE,	DT_LEFT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½ï¿½ï¿½"),		_T("-1"),	-1,	1,	DT_NONE,		FALSE,	DT_LEFT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½ç°¡"),		_T("10"),	-1,	2,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½È£"),	_T("25"),	-1,	3,	DT_SIGN,		TRUE,	DT_CENTER,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½Ï´ï¿½ï¿½"),		_T("11"),	-1,	4,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½ï¿½ï¿½"),		_T("12"),	-1,	5,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("%")}, 
+	{_T("ï¿½Å·ï¿½ï¿½ï¿½"),		_T("13"),	-1,	6,	DT_ZERO_NUMBER,	FALSE,	DT_RIGHT,	_T(""),	_T("")}, 
+	{_T("ï¿½ï¿½ï¿½Ï°Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"),	_T("30"),	-1,	7,	DT_ZERO_NUMBER,	TRUE,	DT_RIGHT,	_T(""),	_T("%")}, 
 };
 
 CKwanSimDlg::CKwanSimDlg(CWnd* pParent /*=NULL*/)
@@ -82,38 +82,38 @@ END_MESSAGE_MAP()
 
 //*******************************************************************/
 //! Function Name : OnInitDialog
-//! Function      : »ý¼º ÃÊ±â Ã³¸®
+//! Function      : ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½ Ã³ï¿½ï¿½
 //! Param         : void
 //! Return        : BOOL
 //! Create        : , 2014/06/02
-//! Comment       : CKwanSimDlg ¸Þ½ÃÁö Ã³¸®±â
+//! Comment       : CKwanSimDlg ï¿½Þ½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½
 //******************************************************************/
 BOOL CKwanSimDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// ÀÌ ´ëÈ­ »óÀÚÀÇ ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù. ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ ÁÖ Ã¢ÀÌ ´ëÈ­ »óÀÚ°¡ ¾Æ´Ò °æ¿ì¿¡´Â
-	//  ÇÁ·¹ÀÓ¿öÅ©°¡ ÀÌ ÀÛ¾÷À» ÀÚµ¿À¸·Î ¼öÇàÇÕ´Ï´Ù.
-	SetIcon(m_hIcon, TRUE);			// Å« ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.
-	SetIcon(m_hIcon, FALSE);		// ÀÛÀº ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.
+	// ï¿½ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¢ï¿½ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½
+	//  ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+	SetIcon(m_hIcon, TRUE);			// Å« ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+	SetIcon(m_hIcon, FALSE);		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 
-	// TODO: ¿©±â¿¡ Ãß°¡ ÃÊ±âÈ­ ÀÛ¾÷À» Ãß°¡ÇÕ´Ï´Ù.
-	((CEdit*)GetDlgItem(IDC_EDT_JONGCODE))->SetLimitText(10);	// Á¾¸ñÄÚµå ÃÖ´ë±æÀÌ ¼³Á¤
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ß°ï¿½ ï¿½Ê±ï¿½È­ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
+	((CEdit*)GetDlgItem(IDC_EDT_JONGCODE))->SetLimitText(10);	// ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-	InitMultiCodeGrid();					// º¹¼öÁ¾¸ñ ±×¸®µå ÃÊ±â Ã³¸®
+	InitMultiCodeGrid();					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½ Ã³ï¿½ï¿½
 
-	return TRUE;  // Æ÷Ä¿½º¸¦ ÄÁÆ®·Ñ¿¡ ¼³Á¤ÇÏÁö ¾ÊÀ¸¸é TRUE¸¦ ¹ÝÈ¯ÇÕ´Ï´Ù.
+	return TRUE;  // ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ TRUEï¿½ï¿½ ï¿½ï¿½È¯ï¿½Õ´Ï´ï¿½.
 }
 
 void CKwanSimDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ±×¸®±â¸¦ À§ÇÑ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®ÀÔ´Ï´Ù.
+		CPaintDC dc(this); // ï¿½×¸ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½Ø½ï¿½Æ®ï¿½Ô´Ï´ï¿½.
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Å¬¶óÀÌ¾ðÆ® »ç°¢Çü¿¡¼­ ¾ÆÀÌÄÜÀ» °¡¿îµ¥¿¡ ¸ÂÃä´Ï´Ù.
+		// Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½ç°¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îµ¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -121,7 +121,7 @@ void CKwanSimDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// ¾ÆÀÌÄÜÀ» ±×¸³´Ï´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½Ï´ï¿½.
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -132,7 +132,7 @@ void CKwanSimDlg::OnPaint()
 
 void CKwanSimDlg::OnClose()
 {
-	// È­¸é ´ÝÀ» ¶§ ºÎ¸ðÀ©µµ¿ì¿¡°Ô Åëº¸(È­¸é °ü¸® À§ÇØ)
+	// È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Î¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì¿¡ï¿½ï¿½ ï¿½ëº¸(È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 	if (m_pParent)
 	{
 		int nLen = m_strScrNo.GetLength();
@@ -152,7 +152,7 @@ HCURSOR CKwanSimDlg::OnQueryDragIcon()
 
 //*******************************************************************/
 //! Function Name : OnBtnJongAdd
-//! Function      : Á¾¸ñÃß°¡ ¹öÆ°
+//! Function      : ï¿½ï¿½ï¿½ï¿½ï¿½ß°ï¿½ ï¿½ï¿½Æ°
 //! Param         : void
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -160,20 +160,20 @@ HCURSOR CKwanSimDlg::OnQueryDragIcon()
 //******************************************************************/
 void CKwanSimDlg::OnBtnJongAdd()
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
-	// Á¾¸ñÄÚµå ÀÔ·Â ¿©ºÎ
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	CString strCode, strIndex;
 	((CEdit*)GetDlgItem(IDC_EDT_JONGCODE))->GetWindowText(strCode);
 	if (strCode.IsEmpty())
 	{
-		AfxMessageBox(_T("Á¾¸ñÄÚµå¸¦ ÀÔ·Â ÇØ ÁÖ¼¼¿ä~!"));
+		AfxMessageBox(_T("ï¿½ï¿½ï¿½ï¿½ï¿½Úµå¸¦ ï¿½Ô·ï¿½ ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½~!"));
 		((CEdit*)GetDlgItem(IDC_EDT_JONGCODE))->SetFocus();
 		return;
 	}
 
 	if (m_mapJongCode.Lookup(strCode, strIndex))
 	{
-		AfxMessageBox(_T("ÀÌ¹Ì µî·Ï µÈ Á¾¸ñÀÔ´Ï´Ù."));
+		AfxMessageBox(_T("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½."));
 		CCellID cureentCell(_ttoi(strIndex), 0);
 		m_grdKwanSim.SetFocusCell(cureentCell);
 		m_grdKwanSim.SetSelectedRange(cureentCell.row, 0, cureentCell.row, 7);
@@ -184,27 +184,31 @@ void CKwanSimDlg::OnBtnJongAdd()
 	CString strFileName = theApp.m_sAppPath + _T("/data/kwansim.ini");
 	int nCnt = ::GetPrivateProfileInt(_T("JONG_CODE"), _T("COUNT"), 0,strFileName) + 1;
 
-	// Á¾¸ñÄÚµå °¹¼ö Ãß°¡
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 	strIndex.Format("%d", nCnt);
 	::WritePrivateProfileString(_T("JONG_CODE"), _T("COUNT"), strIndex, strFileName);
 
-	// Á¾¸ñÄÚµå Ãß°¡
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ß°ï¿½
 	::WritePrivateProfileString(_T("JONG_CODE"), strIndex, strCode, strFileName);
 	m_mapJongCode.SetAt(strCode, strIndex);
 
-	// Çà Ãß°¡
-	m_grdKwanSim.InsertRow(_T(""), -1);
-	m_grdKwanSim.SetRowHeight(1, 20);		// ÇàÀÇ ³ôÀÌ ¼³Á¤
-	m_grdKwanSim.SetItemFormat(lstOPTKWFID[nCnt].nRow, lstOPTKWFID[nCnt].nCol, lstOPTKWFID[nCnt].nAlign);
+	// ï¿½ï¿½ ï¿½ß°ï¿½
+	int nInsertedRow = m_grdKwanSim.InsertRow(_T(""), -1);
+	m_grdKwanSim.SetRowHeight(1, 20);		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (lstOPTKWFID[nCnt].nRowï¿½ï¿½ -1ï¿½Ì¹Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½)
+	if (nInsertedRow >= 0)
+	{
+		m_grdKwanSim.SetItemFormat(nInsertedRow, lstOPTKWFID[nCnt].nCol, lstOPTKWFID[nCnt].nAlign);
+	}
 	m_grdKwanSim.SetItemText(nCnt, 0, strCode);
 
-	// Á¾¸ñ Á¶È¸ ¿äÃ»
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ ï¿½ï¿½Ã»
 	SendJongSearch(1, strCode, 5);
 }
 
 //*******************************************************************/
 //! Function Name : OnBtnJongDelete
-//! Function      : Á¾¸ñ»èÁ¦ ¹öÆ°
+//! Function      : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
 //! Param         : void
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -212,7 +216,7 @@ void CKwanSimDlg::OnBtnJongAdd()
 //******************************************************************/
 void CKwanSimDlg::OnBtnJongDelete()
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 	int nCnt = m_grdKwanSim.GetRowCount();
 	if (nCnt > 2)
 	{
@@ -222,10 +226,10 @@ void CKwanSimDlg::OnBtnJongDelete()
 			return;
 		}
 		CString strTemp;
-		strTemp.Format(_T("Á¾¸ñ [%s %s] À» »èÁ¦ ÇÏ°Ú½À´Ï±î?"), 
+		strTemp.Format(_T("ï¿½ï¿½ï¿½ï¿½ [%s %s] ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï°Ú½ï¿½ï¿½Ï±ï¿½?"), 
 			m_grdKwanSim.GetItemText(m_cellSelect.row, 0), 
 			m_grdKwanSim.GetItemText(m_cellSelect.row, 1));
-		if (MessageBox(strTemp, _T("º¹¼öÁ¾¸ñ »èÁ¦"), MB_ICONQUESTION | MB_YESNO) == IDNO)
+		if (MessageBox(strTemp, _T("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½"), MB_ICONQUESTION | MB_YESNO) == IDNO)
 		{
 			return;
 		}
@@ -235,23 +239,23 @@ void CKwanSimDlg::OnBtnJongDelete()
 		m_mapJongCode.RemoveAll();
 
 		CString strFileName = theApp.m_sAppPath + _T("/data/kwansim.ini");
-		// Á¾¸ñÄÚµå °¹¼ö Ãß°¡
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 		CString strIndex, strCode;
 		strIndex.Format("%d", nCnt - 1);
 		::WritePrivateProfileString(_T("JONG_CODE"), _T("COUNT"), strIndex, strFileName);
 
-		// Á¾¸ñ Àç¼³Á¤
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ç¼³ï¿½ï¿½
 		for (auto i = 1; i < nCnt; i++)
 		{
 			strIndex.Format(_T("%d"), i);
 			strCode = m_grdKwanSim.GetItemText(i, 0);
 
-			// Á¾¸ñÄÚµå Ãß°¡
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ß°ï¿½
 			::WritePrivateProfileString(_T("JONG_CODE"), strIndex, strCode, strFileName);
 			m_mapJongCode.SetAt(strCode, strIndex);
 		}
 
-		SendJongSearch();		// Á¾¸ñ Á¶È¸ ¿äÃ»
+		SendJongSearch();		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ ï¿½ï¿½Ã»
 	}
 	else
 	{
@@ -261,7 +265,7 @@ void CKwanSimDlg::OnBtnJongDelete()
 
 //*******************************************************************/
 //! Function Name : OnBtnJongAllDelete
-//! Function      : ÀüÃ¼»èÁ¦ ¹öÆ°
+//! Function      : ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
 //! Param         : void
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -269,23 +273,23 @@ void CKwanSimDlg::OnBtnJongDelete()
 //******************************************************************/
 void CKwanSimDlg::OnBtnJongAllDelete()
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
-	if (MessageBox(_T("º¹¼öÁ¾¸ñÀ» ÀüÃ¼»èÁ¦ ÇÏ°Ú½À´Ï±î?"), _T("º¹¼öÁ¾¸ñ ÀüÃ¼»èÁ¦"), MB_ICONQUESTION | MB_YESNO) == IDNO)
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
+	if (MessageBox(_T("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½Ï°Ú½ï¿½ï¿½Ï±ï¿½?"), _T("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½"), MB_ICONQUESTION | MB_YESNO) == IDNO)
 	{
 		return;
 	}
-	// ÆÄÀÏ»èÁ¦
+	// ï¿½ï¿½ï¿½Ï»ï¿½ï¿½ï¿½
 	CString strFileName = theApp.m_sAppPath + _T("/data/kwansim.ini");
 	::DeleteFile(strFileName);
-	m_mapJongCode.RemoveAll();		// Á¾¸ñÄÚµå ÃÊ±âÈ­
-	m_grdKwanSim.SetRowCount(1);	// ±×¸®µå ÃÊ±âÈ­
+	m_mapJongCode.RemoveAll();		// ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½Ê±ï¿½È­
+	m_grdKwanSim.SetRowCount(1);	// ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 
 	m_grdKwanSim.Invalidate();
 }
 
 //*******************************************************************/
 //! Function Name : OnBtnSearch
-//! Function      : Á¶È¸ ¹öÆ°
+//! Function      : ï¿½ï¿½È¸ ï¿½ï¿½Æ°
 //! Param         : void
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -293,16 +297,16 @@ void CKwanSimDlg::OnBtnJongAllDelete()
 //******************************************************************/
 void CKwanSimDlg::OnBtnCommKwRq()
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 	m_cellSelect.row = 0;
 	m_cellSelect.col = 0;
 	m_grdKwanSim.SetRowCount(1);
-	SetMultiCode();					// º¹¼ö ±×¸®µå¿¡ Á¾¸ñ ¼³Á¤ Ã³¸®
+	SetMultiCode();					// ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½å¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 }
 
 //*******************************************************************/
 //! Function Name : InitKwanSimGrid
-//! Function      : È£°¡ ±×¸®µå ÃÊ±â Ã³¸®
+//! Function      : È£ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½ Ã³ï¿½ï¿½
 //! Param         : void
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -310,31 +314,31 @@ void CKwanSimDlg::OnBtnCommKwRq()
 //******************************************************************/
 void CKwanSimDlg::InitMultiCodeGrid()
 {
-	m_grdKwanSim.SetEditable(false);				//cellÀ» ¿¡µðÆ® ¸øÇÏ°Ô ÇÔ.
+	m_grdKwanSim.SetEditable(false);				//cellï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½.
 	m_grdKwanSim.EnableScrollBars(SB_BOTH, FALSE);
 
 	COLORREF clr = RGB(215, 227, 241);
 
-	// °íÁ¤ Çà/¿­ ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½/ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	m_grdKwanSim.SetFixedRowCount(1);
 
-	// Çà/¿­ °¹¼ö ¼³Á¤
+	// ï¿½ï¿½/ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	m_grdKwanSim.SetRowCount(1);
 	m_grdKwanSim.SetColumnCount(8);
 
-	// ¿­ÀÇ ³ÐÀÌ ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	int i, nWidth[] = {50, 80, 80, 20, 60, 60, 80, 80};
-	CString strHeader[] = {_T("ÄÚµå"), _T("Á¾¸ñ¸í"), _T("ÇöÀç°¡"), _T(""), _T("ÀüÀÏ´ëºñ"), _T("µî¶ôÀ²"), _T("°Å·¡·®"), _T("°Å·¡·®´ëºñ")};
-	int nCnt = sizeof(nWidth) / sizeof(*nWidth);		// ÀüÃ¼Å©±â / ¿ø¼ÒÅ©±â = ¿ø¼Ò°³¼ö
+	CString strHeader[] = {_T("ï¿½Úµï¿½"), _T("ï¿½ï¿½ï¿½ï¿½ï¿½"), _T("ï¿½ï¿½ï¿½ç°¡"), _T(""), _T("ï¿½ï¿½ï¿½Ï´ï¿½ï¿½"), _T("ï¿½ï¿½ï¿½ï¿½ï¿½"), _T("ï¿½Å·ï¿½ï¿½ï¿½"), _T("ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")};
+	int nCnt = sizeof(nWidth) / sizeof(*nWidth);		// ï¿½ï¿½Ã¼Å©ï¿½ï¿½ / ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ = ï¿½ï¿½ï¿½Ò°ï¿½ï¿½ï¿½
 	for (i = 0; i < nCnt; i++)
 	{
 		m_grdKwanSim.SetColumnWidth(i, nWidth[i]);
 		m_grdKwanSim.SetItemFormat(0, i, DT_CENTER);
 		m_grdKwanSim.SetItemText(0, i, strHeader[i]);
-		m_grdKwanSim.SetItemBkColour(0, i, clr);	// ÁöÁ¤µÈ ¼¿ÀÇ ¹è°æ»ö ¼³Á¤
+		m_grdKwanSim.SetItemBkColour(0, i, clr);	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 
-	// ÇàÀÇ ³ôÀÌ ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	m_grdKwanSim.SetRowHeight(0, 24);
 
 	m_grdKwanSim.Invalidate();
@@ -342,7 +346,7 @@ void CKwanSimDlg::InitMultiCodeGrid()
 
 //*******************************************************************/
 //! Function Name : SetKwanSimJong
-//! Function      : º¹¼öÁ¾¸ñ ±×¸®µå¿¡ Á¾¸ñ ¼³Á¤ Ã³¸®
+//! Function      : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½å¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 //! Param         : void
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -365,10 +369,10 @@ void CKwanSimDlg::SetMultiCode()
 		::GetPrivateProfileString(_T("JONG_CODE"), strIndex, _T(""), szItem, nSize, strFileName);
 		strCode = szItem;		strCode.Trim();
 
-		// Á¾¸ñÄÚµå Ãß°¡
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ß°ï¿½
 		m_mapJongCode.SetAt(strCode, strIndex);
 
-		m_grdKwanSim.SetRowHeight(i, 20);		// ÇàÀÇ ³ôÀÌ ¼³Á¤
+		m_grdKwanSim.SetRowHeight(i, 20);		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		m_grdKwanSim.SetItemText(i, 0, strCode);
 
 		strCodeList += strCode + _T(";");
@@ -376,7 +380,7 @@ void CKwanSimDlg::SetMultiCode()
 
 	if (!strCodeList.IsEmpty())
 	{
-		// Á¾¸ñ Á¶È¸ ¿äÃ»
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ ï¿½ï¿½Ã»
 		SendJongSearch(nCnt - 1, strCodeList);
 	}
 
@@ -385,8 +389,8 @@ void CKwanSimDlg::SetMultiCode()
 
 //*******************************************************************/
 //! Function Name : SendJongSearch
-//! Function      : Á¾¸ñ Á¶È¸ ¿äÃ»
-//! Param         : int nCodeCount/* = 0*/, CString strCodeList/* = _T("")*/ : À¯Çü - "000660;005930;", int nAddType/*= 0*/ ±âÁ¸ Á¾¸ñÁ¶È¸¿¡¼­ Ãß°¡·Î Á¾¸ñÀ» Á¶È¸ÇÒ¶§ ¿©ºÎ(0:±âº», 5:Ãß°¡)
+//! Function      : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ ï¿½ï¿½Ã»
+//! Param         : int nCodeCount/* = 0*/, CString strCodeList/* = _T("")*/ : ï¿½ï¿½ï¿½ï¿½ - "000660;005930;", int nAddType/*= 0*/ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ò¶ï¿½ ï¿½ï¿½ï¿½ï¿½(0:ï¿½âº», 5:ï¿½ß°ï¿½)
 //! Return        : void
 //! Create        : , 2014/06/02
 //! Comment       : 
@@ -410,7 +414,7 @@ void CKwanSimDlg::SendJongSearch(int nCodeCount/* = 0*/, CString strCodeList/* =
 
 	if (nCodeCount > 0 && strCodeList.GetLength() > 0)
 	{
-		CString strRQName = _T("º¹¼öÁ¾¸ñ");
+		CString strRQName = _T("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		long lRet = theApp.m_khOpenApi.CommKwRqData(strCodeList, 0, nCodeCount, nAddType, strRQName, m_strScrNo);
 		if (!theApp.IsError(lRet))
 		{
@@ -421,7 +425,7 @@ void CKwanSimDlg::SendJongSearch(int nCodeCount/* = 0*/, CString strCodeList/* =
 
 //*******************************************************************/
 //! Function Name : OnReceiveTrDataKhopenapictrl
-//! Function      : Á¶È¸ ÀÀ´ä Ã³¸®
+//! Function      : ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 //! Param         : LPCTSTR sScrNo, LPCTSTR sRQName, LPCTSTR sTrcode, LPCTSTR sRecordName, LPCTSTR sPrevNext, long nDataLength, LPCTSTR sErrorCode, LPCTSTR sMessage, LPCTSTR sSplmMsg
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -430,13 +434,13 @@ void CKwanSimDlg::SendJongSearch(int nCodeCount/* = 0*/, CString strCodeList/* =
 void CKwanSimDlg::OnReceiveTrDataKhopenapictrl(LPCTSTR sScrNo, LPCTSTR sRQName, LPCTSTR sTrcode, LPCTSTR sRecordName, LPCTSTR sPrevNext, long nDataLength, LPCTSTR sErrorCode, LPCTSTR sMessage, LPCTSTR sSplmMsg)
 {
 	CString strRQName = sRQName;
-	if (strRQName == _T("º¹¼öÁ¾¸ñ"))			// º¹¼öÁ¾¸ñ Á¶È¸
+	if (strRQName == _T("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"))			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 	{
 		CString strData;
 		CStringArray arrData;
-		int nFieldCnt = sizeof(lstOPTKWFID) / sizeof(*lstOPTKWFID);		// ÀüÃ¼Å©±â / ¿ø¼ÒÅ©±â = ¿ø¼Ò°³¼ö
+		int nFieldCnt = sizeof(lstOPTKWFID) / sizeof(*lstOPTKWFID);		// ï¿½ï¿½Ã¼Å©ï¿½ï¿½ / ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ = ï¿½ï¿½ï¿½Ò°ï¿½ï¿½ï¿½
 
-		strRQName = _T("°ü½ÉÁ¾¸ñÁ¤º¸");
+		strRQName = _T("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		int nCnt = theApp.m_khOpenApi.GetRepeatCnt(sTrcode, strRQName);
 		for (int i = 0; i < nCnt; i++)
 		{
@@ -467,7 +471,7 @@ void CKwanSimDlg::OnReceiveMsgKhopenapictrl(LPCTSTR sScrNo, LPCTSTR sRQName, LPC
 
 //*******************************************************************/
 //! Function Name : OnReceiveRealDataKhopenapictrl
-//! Function      : ½Ç½Ã°£ Ã³¸®
+//! Function      : ï¿½Ç½Ã°ï¿½ Ã³ï¿½ï¿½
 //! Param         : LPCTSTR sJongmokCode, LPCTSTR sRealType, LPCTSTR sRealData
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -483,10 +487,10 @@ void CKwanSimDlg::OnReceiveRealDataKhopenapictrl(LPCTSTR sJongmokCode, LPCTSTR s
 
 	CString strData;
 	CStringArray arrData;
-	if (!strcmp(sRealType, _T("ÁÖ½Ä½Ã¼¼")))		// ÁÖ½Ä½Ã¼¼
+	if (!strcmp(sRealType, _T("ï¿½Ö½Ä½Ã¼ï¿½")))		// ï¿½Ö½Ä½Ã¼ï¿½
 	{
 		arrData.Add(sJongmokCode);
-		int i, nFieldCnt = sizeof(lstOPTKWFID) / sizeof(*lstOPTKWFID);		// ÀüÃ¼Å©±â / ¿ø¼ÒÅ©±â = ¿ø¼Ò°³¼ö
+		int i, nFieldCnt = sizeof(lstOPTKWFID) / sizeof(*lstOPTKWFID);		// ï¿½ï¿½Ã¼Å©ï¿½ï¿½ / ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ = ï¿½ï¿½ï¿½Ò°ï¿½ï¿½ï¿½
 		for (i = 1; i < nFieldCnt; i++)
 		{
 			if (_ttoi(lstOPTKWFID[i].strFID) < 0)
@@ -499,10 +503,10 @@ void CKwanSimDlg::OnReceiveRealDataKhopenapictrl(LPCTSTR sJongmokCode, LPCTSTR s
 		}
 		SetDataKwanSimGrid(arrData, sRealType);
 	}
-	else if (!strcmp(sRealType, _T("ÁÖ½ÄÃ¼°á")))	// ÁÖ½ÄÃ¼°á
+	else if (!strcmp(sRealType, _T("ï¿½Ö½ï¿½Ã¼ï¿½ï¿½")))	// ï¿½Ö½ï¿½Ã¼ï¿½ï¿½
 	{
 		arrData.Add(sJongmokCode);
-		int i, nFieldCnt = sizeof(lstOPTKWFID_B) / sizeof(*lstOPTKWFID_B);		// ÀüÃ¼Å©±â / ¿ø¼ÒÅ©±â = ¿ø¼Ò°³¼ö
+		int i, nFieldCnt = sizeof(lstOPTKWFID_B) / sizeof(*lstOPTKWFID_B);		// ï¿½ï¿½Ã¼Å©ï¿½ï¿½ / ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ = ï¿½ï¿½ï¿½Ò°ï¿½ï¿½ï¿½
 		for (i = 1; i < nFieldCnt; i++)
 		{
 			if (_ttoi(lstOPTKWFID[i].strFID) < 0)
@@ -524,7 +528,7 @@ void CKwanSimDlg::OnReceiveChejanData(LPCTSTR sGubun, LONG nItemCnt, LPCTSTR sFi
 
 //*******************************************************************/
 //! Function Name : SetDataKwanSimGrid
-//! Function      : º¹¼öÁ¾¸ñ ±×¸®µå µ¥ÀÌÅ¸ ¼³Á¤
+//! Function      : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½
 //! Param         : CStringArray &arrData, CString strRealType/* = _T("")*/
 //! Return        : void
 //! Create        : , 2014/06/02
@@ -532,7 +536,7 @@ void CKwanSimDlg::OnReceiveChejanData(LPCTSTR sGubun, LONG nItemCnt, LPCTSTR sFi
 //******************************************************************/
 void CKwanSimDlg::SetDataKwanSimGrid(CStringArray &arrData, CString strRealType/* = _T("")*/)
 {
-	// Á¾¸ñÄÚµå¿¡ ¸Â´Â Çà Ã£±â
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Úµå¿¡ ï¿½Â´ï¿½ ï¿½ï¿½ Ã£ï¿½ï¿½
 	CString strData, strTemp;
 	strData = arrData.GetAt(0);
 	if (!m_mapJongCode.Lookup(strData, strTemp))
@@ -540,12 +544,12 @@ void CKwanSimDlg::SetDataKwanSimGrid(CStringArray &arrData, CString strRealType/
 		return;
 	}
 
-	// Á¾¸ñ¸í
+	// ï¿½ï¿½ï¿½ï¿½ï¿½
 	int i, nRow = atol(strTemp), nCnt = arrData.GetSize();
 	if (strRealType == _T(""))
 	{
 		CString strName = arrData.GetAt(1);
-		((CStatic*)GetDlgItem(IDC_EDT_JONGCODE))->GetWindowText(strTemp);	// Á¾¸ñÄÚµå ÀÔ·Â¶õ
+		((CStatic*)GetDlgItem(IDC_EDT_JONGCODE))->GetWindowText(strTemp);	// ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½Ô·Â¶ï¿½
 		if (strTemp == strData)
 		{
 			((CStatic*)GetDlgItem(IDC_STC_JONGNAME))->SetWindowText(strName);
@@ -553,13 +557,13 @@ void CKwanSimDlg::SetDataKwanSimGrid(CStringArray &arrData, CString strRealType/
 		m_grdKwanSim.SetItemText(nRow, lstOPTKWFID[1].nCol, theApp.ConvDataFormat(lstOPTKWFID[1].nDataType, strName, lstOPTKWFID[1].strBeforeData, lstOPTKWFID[1].strAfterData));
 	}
 
-	// µ¥ÀÌÅ¸ ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½
 	CString strTempData;
 	for (i = 2; i < nCnt; i++)
 	{
 		strData = arrData.GetAt(i);
 		/////////////////////////////////////////////
-		// º¯°æ µÈ µ¥ÀÌÅÍ ¼±ÅÃ Ã³¸®¡é¡é¡é¡é¡é¡é¡é¡é¡é
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (strRealType != _T("") && (i == 2 || i == 4 || i == 5))
 		{
 			strTempData = strData;
@@ -576,16 +580,16 @@ void CKwanSimDlg::SetDataKwanSimGrid(CStringArray &arrData, CString strRealType/
 				m_grdKwanSim.Invalidate();
 			}
 		}
-		// º¯°æ µÈ µ¥ÀÌÅÍ ¼±ÅÃ Ã³¸®¡è¡è¡è¡è¡è¡è¡è¡è¡è
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		/////////////////////////////////////////////
 		if (lstOPTKWFID[i].bTextColor)
 		{
 			strTemp = arrData.GetAt(3);
-			if (strTemp == _T("1") || strTemp == _T("2"))	// ºÎÈ£¿¡ µû¶ó »ö»óº¯°æ
+			if (strTemp == _T("1") || strTemp == _T("2"))	// ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½óº¯°ï¿½
 			{
 				strTemp = _T("1");
 			}
-			else if (strTemp == _T("4") || strTemp == _T("5"))	// ºÎÈ£¿¡ µû¶ó »ö»óº¯°æ
+			else if (strTemp == _T("4") || strTemp == _T("5"))	// ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½óº¯°ï¿½
 			{
 				strTemp = _T("-1");
 			}
